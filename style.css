@@ -1,0 +1,251 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: black;
+    font-family: 'Geologica', sans-serif;
+}
+
+li{
+    text-decoration: none;
+}
+
+:root{
+    --color-text: white;
+    --color-faintw : rgb(196, 196, 196);
+    --color-minordetail: grey;
+    transition: all 400ms ease;
+}
+
+
+.flex{
+    display:flex;
+}
+.flexr{
+    display:flex;
+    flex-direction: column;
+}
+
+.aic{
+    align-items: center;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
+
+/* ---------------------- header / navcontainer --------------------------------- */
+
+.logo{
+    font-weight: 1000;
+}
+
+.navcontainer{
+    height:100px;
+    background-color:black;
+    justify-content: space-around;
+    align-items: center;
+    color:white;
+    font-family: 'Geologica', sans-serif;
+    font-size: 19px;
+    border-bottom:1px solid white;
+}
+
+.navlist{
+    list-style-type: none;
+}
+
+.navlist a {
+    color: var(--color-faintw);
+    text-decoration: none;
+}
+
+.navlist a:hover{
+    color: var(--color-text);
+}
+
+
+
+.navsub1{
+    width:350px;
+    justify-content: space-between;
+    font-weight: 100;
+}
+
+.navsub2{
+    width:100px;
+    margin-left: 30px;
+    justify-content: space-between;
+}
+
+.icon{
+    color:var(--color-faintw);
+}
+
+.navelements{
+    display:flex;
+}
+
+.icon:hover{
+    color:rgb(255, 255, 255);
+}
+
+.navelement-2 .icon{
+    font-size: 25px;
+}
+
+.openclose{
+    display:none;
+}
+
+.openclose li{
+    list-style: none;
+}
+
+.openclose li i{
+    color: var(--color-text);
+    font-size: 25px;
+}
+
+@media  screen and (max-width:1023px) {
+
+    .navelements{
+        position:fixed;
+        top:0;
+        left:0;
+        display:flex;
+        flex-direction: column;
+        padding:40px;
+        gap:50px;   
+        width:100vw;
+        background:black;
+        transition: color .3s; 
+    }
+
+    .navsub1{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 40px;
+        width:100vw;
+    }
+
+    .navsub2{
+        display:flex;
+        align-items:center;
+        width:100vw;
+        justify-content: center;
+        gap:30px;
+        margin:0;
+    }
+
+    .openclose{
+        display:flex;
+    }
+}
+
+/* --------------------- main container ------------------ */
+
+
+.maincontainer{
+    color:white;
+    justify-content: center;
+    margin-top:80px;
+}
+
+.subdiv1{
+    display:flex;
+    width:280px;
+    line-height: 50px;
+}
+
+.subdiv1 h1{
+    font-size:40px;
+}
+
+.stars{
+    color:var(--color-minordetail);
+}
+
+.material-symbols-outlined{
+    font-size:none;
+}
+
+.subdiv2{
+    display:flex;
+    width:300px;
+}
+
+
+.watchimg{
+    height:200px;
+    width: 200px;
+    margin-bottom: 20px; 
+}
+
+.price{
+    align-items: center;
+    color:var(--color-minordetail);
+    font-family: 'Roboto', sans-serif;
+}
+
+.watchI{
+    font-size:100px;
+}
+
+.sizes{
+    font-size: 22px;
+}
+
+.btn1{
+    width:200px;
+    color:var(--color-text);
+    background:transparent;
+    border: 1px solid var(--color-faintw);
+    font-size:18px;
+    justify-content: center;
+    padding:12px 20px;
+    font-weight: 600;
+    font-family: 'Poppins',sans-serif;
+    word-spacing: 2px;;
+}
+
+.btn1 i{
+    font-size: 22px;
+    font-weight: 400;
+    margin-left:10px;
+}
+
+
+.btn1:hover i{
+    animation: buy 2s infinite ease;
+    font-weight: bold;
+}
+
+@keyframes buy{
+    0%{}
+    50%{
+        transform:translateX(4px); 
+    }
+}
+
+
+.btn1:hover{
+    background: var(--color-text);
+    color: black;
+    border: 1px solid black;
+}
+
+.faint{
+    color:var(--color-minordetail)
+}
+
+.faint a{
+    color:var(--color-minordetail);
+    text-decoration: none;
+}
+
+p{
+    margin: 0;
+}
+
