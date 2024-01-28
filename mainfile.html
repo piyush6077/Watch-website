@@ -11,37 +11,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@200&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.css">
-    
+    <link rel="stylesheet" href="./assets/swiper-bundle.min.css">
 </head>
 <body>
     <div class="main flexr">
-        <div class="navcontainer flex">
-            <div class="logo">WATCHES</div>
-            <div class="navlist flex ">
-                <div class="navelements">
-                    <div class="navsub1 flex">
-                        <li class="navelement-1"><a href="#">Home</a></li>
-                        <li class="navelement-1"><a href="#">About</a></li>
-                        <li class="navelement-1"><a href="#">Featured</a></li>
-                        <li class="navelement-1"><a href="#">New</a></li>
-                    </div>
+        <div class="navbar flex">
+            <div class="navcontainer flex">
+                <div class="logo">WATCHES</div>
+                <div class="navSub hidden" id="navSub">
+                    <i class="ri-close-fill flexEnd" id="closeMenu"></i>
+                    <div class="navsub1  flex">
+                        <li class="navelement "><a href="#">Home</a></li>
+                        <li class="navelement "><a href="#">About</a></li>
+                        <li class="navelement "><a href="#">Featured</a></li>
+                        <li class="navelement "><a href="#">New</a></li>
+                    </div> 
                     <div class="navsub2 flex">
                         <li class="navelement-2"><a href="#"><i class="ri-facebook-circle-line icon"></i></a></li>
                         <li class="navelement-2"><a href="#"><i class="ri-instagram-line icon"></i></a></li>
                         <li class="navelement-2"><a href="#"><i class="ri-telegram-line icon"></i></a></li>
                     </div>
                 </div>
-            </div>
-            <div class="openclose flex">
-                    <li>
-                        <i class="ri-menu-line"></i>
-                    </li>
-                    <li>
-                        <i class="ri-close-fill"></i>
-                    </li>
-                </a>
+                <div class="menu flex">
+                    <i class="ri-menu-line show" id="openMenu"></i>
+                    <!-- <i class="ri-close-fill hidden" id="closeMenu"></i> -->
+                </div>
             </div>
         </div>
+
+        <!-- ------------------ nav_container ended ---------------- -->
+        
         <div class="maincontainer flex">
             <div class="subdiv1 flexr">
                 <div class="flex stars">
@@ -64,12 +63,33 @@
                 </button>
             </div>
 
+            <div class="middle__container">
+                <div class="home__swiper swiper" style="margin: 0;">
+                    <div class="swiper-wrapper ">
+                        <article class="imageDiv swiper-slide"  style="display:flex;justify-content: center;">
+                            <img src="images/watches-1.png" alt="">
+                        </article>
+                        <article class="imageDiv swiper-slide" style="display:flex;justify-content: center;">
+                            <img src="images/watches-2.png" alt="">
+                        </article>
+                        <article class="imageDiv swiper-slide"  style="display:flex;justify-content: center;">
+                            <img src="images/watches-3.png" alt="">
+                        </article>
+                   </div>  
+                </div> 
+                <div class="swiper-pagination"></div>
+            </div>
+
             <div class="subdiv2 flexr">
                 <img src="./images/watches-border.png" alt="" class="watchimg">
-                <p class="faint">Elevate your style and seize the essence of time with our exquisite collection of wristwatches.</p>
+                <p class="faint">Elevate your style and seize the essence of time with our exquisite collection of wrist watches.</p>
+                <br>
                 <h2 class="faint fs"><a href="#">Learn More</a></h2>
             </div>
         </div>
     </div>
+
+    <script src="brain.js"></script>
+    <script src="./assets/swiper-bundle.min.js"></script>
 </body>
 </html>

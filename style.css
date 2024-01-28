@@ -1,19 +1,31 @@
 body{
-    margin: 0;
-    padding: 0;
     background: black;
-    font-family: 'Geologica', sans-serif;
 }
 
-li{
+.main{
+    overflow: hidden;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    /* background: black; */
+    font-family: 'Geologica', sans-serif;
+    list-style-type: none;
     text-decoration: none;
 }
+
+/* li{
+    text-decoration: none;
+} */
 
 :root{
     --color-text: white;
     --color-faintw : rgb(196, 196, 196);
     --color-minordetail: grey;
     transition: all 400ms ease;
+    --flex-container-l: 82%; 
+    --big-container: 100vw;
 }
 
 
@@ -38,6 +50,16 @@ h1,h2,h3,h4,h5,h6{
 
 .logo{
     font-weight: 1000;
+    width:60%;
+    /* justify-content: start; */
+    /* margin-left: 50px; */
+}
+
+.navbar{
+    justify-content: center;
+    width: var(--big-container);
+    border-bottom:1px solid white;
+    position: relative;
 }
 
 .navcontainer{
@@ -48,114 +70,140 @@ h1,h2,h3,h4,h5,h6{
     color:white;
     font-family: 'Geologica', sans-serif;
     font-size: 19px;
-    border-bottom:1px solid white;
+    width:var(--flex-container-l);
 }
 
-.navlist{
-    list-style-type: none;
-}
-
-.navlist a {
+.navsub1 li a{
     color: var(--color-faintw);
-    text-decoration: none;
 }
 
-.navlist a:hover{
+.navsub1 li a:hover{
     color: var(--color-text);
 }
 
+.navSub{
+    display:flex;
+    width:100%;
+    justify-content: flex-end;
+    gap:50px;
+    margin-right: 100px;
+}
 
 
 .navsub1{
-    width:350px;
-    justify-content: space-between;
+    display: flex;
     font-weight: 100;
+    gap:35px;
+    background-color: transparent;
 }
 
 .navsub2{
-    width:100px;
-    margin-left: 30px;
+    display: flex;
     justify-content: space-between;
+    gap:20px;
 }
 
-.icon{
-    color:var(--color-faintw);
-}
-
-.navelements{
-    display:flex;
-}
 
 .icon:hover{
     color:rgb(255, 255, 255);
 }
 
 .navelement-2 .icon{
+    color:var(--color-faintw);
     font-size: 25px;
 }
 
-.openclose{
+.navelement-2 .icon:hover{
+    color: var(--color-text);
+}
+
+.menu{
     display:none;
 }
 
-.openclose li{
-    list-style: none;
-}
-
-.openclose li i{
+.menu i{
     color: var(--color-text);
     font-size: 25px;
 }
 
-@media  screen and (max-width:1023px) {
+.flexEnd{
+    display:none;
+}
 
-    .navelements{
-        position:fixed;
-        top:0;
-        left:0;
-        display:flex;
+.hidden{
+    display:flex;
+}
+
+
+
+@media  screen and (max-width:1023px) {
+    .navSub{
+        position:absolute;
+        /* display: flex; */
         flex-direction: column;
-        padding:40px;
-        gap:50px;   
+        background: red;
         width:100vw;
-        background:black;
-        transition: color .3s; 
+        top:0%;
+        left:0;
+        padding: 40px 0;
+        align-items: center;
+        text-align: center;
+        background: rgb(19, 19, 19);
+        font-size: 20px;
+        z-index: 999;
+        /* display:none; */
     }
 
     .navsub1{
-        display:flex;
         flex-direction: column;
-        align-items: center;
-        row-gap: 40px;
-        width:100vw;
     }
 
-    .navsub2{
+    .menu{
         display:flex;
-        align-items:center;
-        width:100vw;
-        justify-content: center;
-        gap:30px;
-        margin:0;
+        font-size: 28px;
     }
 
-    .openclose{
-        display:flex;
+    .hidden{
+        display:none;
     }
+
+    .show{
+        display: flex;
+    }
+
+    .flexEnd{
+        display: flex;
+        padding:3px 4px;
+        border-radius: 20px;
+        color:rgb(0, 0, 0);
+        background: white;
+        border:1px solid white;
+    }
+
+    .flexEnd:hover{
+       background-color: transparent;
+       color: white;
+       border: 1px solid white;
+    }
+
 }
+
 
 /* --------------------- main container ------------------ */
 
 
+
 .maincontainer{
+    display: flex;
     color:white;
     justify-content: center;
     margin-top:80px;
+    gap:20px
 }
 
 .subdiv1{
     display:flex;
-    width:280px;
+    width:25%;
     line-height: 50px;
 }
 
@@ -173,7 +221,9 @@ h1,h2,h3,h4,h5,h6{
 
 .subdiv2{
     display:flex;
-    width:300px;
+    /* align-items: center; */
+    /* justify-content: center; */
+    width:25%;
 }
 
 
@@ -187,6 +237,7 @@ h1,h2,h3,h4,h5,h6{
     align-items: center;
     color:var(--color-minordetail);
     font-family: 'Roboto', sans-serif;
+    margin : 12px 0;
 }
 
 .watchI{
@@ -213,7 +264,7 @@ h1,h2,h3,h4,h5,h6{
 .btn1 i{
     font-size: 22px;
     font-weight: 400;
-    margin-left:10px;
+    /* margin-left:10px; */
 }
 
 
@@ -249,3 +300,35 @@ p{
     margin: 0;
 }
 
+
+/* -------------- imagesDivs --------------------- */
+
+
+.middle__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+
+article{
+    display: flex;
+    justify-content: center;
+    width:100%;
+    display: flex;
+}
+
+.imageDiv img{
+    display: flex;
+    width: 60%;
+    height: 500px;
+    z-index: 555;
+}
+
+.swiper-pagination{
+    width:100px;
+    background: red;
+    z-index: 777;
+}
