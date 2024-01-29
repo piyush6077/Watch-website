@@ -11,7 +11,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@200&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.css">
-    <link rel="stylesheet" href="./assets/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+    .swiper-pagination-bullets .swiper-pagination-horizontal{
+       bottom: -2rem;
+    }
+
+    
+
+    .swiper-pagination-bullet{
+       width:1rem;
+       height: .15rem;
+       border-radius: 0;
+       background-color: var(--color-text);
+       transition: background-color .3s , width .3s;
+    }
+
+    .swiper-pagination-bullet-active{
+        width:1.5rem;
+        background-color:var(--color-text);
+    }
+    </style>
 </head>
 <body>
     <div class="main flexr">
@@ -57,14 +77,16 @@
                     </span>
                     <h3>1200</h3>
                 </div> 
-                <button class="btn1 flex aic">
-                    <p>Add to Cart</p>
-                    <i class="ri-arrow-right-s-line"></i>
-                </button>
+                <div class="btn flex">
+                    <button class="btn1 flex aic">
+                        <p>Add to Cart</p>
+                        <i class="ri-arrow-right-s-line"></i>
+                    </button>
+                </div>
             </div>
 
             <div class="middle__container">
-                <div class="home__swiper swiper" style="margin: 0;">
+                <!-- <div class="mySwiper swiper" style="margin: 0;">
                     <div class="swiper-wrapper ">
                         <article class="imageDiv swiper-slide"  style="display:flex;justify-content: center;">
                             <img src="images/watches-1.png" alt="">
@@ -77,19 +99,65 @@
                         </article>
                    </div>  
                 </div> 
-                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination"></div> -->
+                <div class="swiper forSwiper" style="width:100%">
+                    <div class="swiper-wrapper">
+                      <article class="swiper-slide" style="display: flex;justify-content: center;">
+                        <img src="images/watches-1.png" class="images" style="width:65%;height:70vh"  alt="">
+                      </article>
+                      <article class="swiper-slide" style="display: flex;justify-content: center;">
+                        <img src="images/watches-2.png"  class="images" style="width:65%;height:70vh" alt="">
+                      </article>
+                      <article class=" swiper-slide" style="display: flex;justify-content: center;">
+                        <img src="images/watches-3.png"  class="images" style="width:65%;height:70vh"  alt="">
+                      </article>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
             </div>
 
             <div class="subdiv2 flexr">
                 <img src="./images/watches-border.png" alt="" class="watchimg">
-                <p class="faint">Elevate your style and seize the essence of time with our exquisite collection of wrist watches.</p>
-                <br>
-                <h2 class="faint fs"><a href="#">Learn More</a></h2>
+                <div class="subdiv2_sub">
+                   <p class="faint">Elevate your style and seize the essence of time with our exquisite collection of wrist watches.</p>
+                   <br>
+                   <h2 class="faint fs"><a href="#">Learn More</a></h2>
+                </div>            
             </div>
         </div>
     </div>
 
     <script src="brain.js"></script>
-    <script src="./assets/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>  
+    <script>
+        var swiper = new Swiper(".forSwiper", {
+        loop:true,
+        spaceBetween: 32,
+        grabCursor: true,
+        effect: 'creative',
+        creativeEffect: {
+            prev: {
+                translate: [-100, 0 , -500],
+                rotate:[0, 0 , 15],
+                opacity: 0
+            },
+            next: {
+                translate: [100, 0 , -500],
+                rotate:[0, 0 , -15],
+                opacity: 0
+            },
+        },
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+      },
+    });
+
+    gsap.from('.images' , 1.5 , {opacity: 0 , y: 150, delay: .1})
+    gsap.from('.subdiv1' , 1.5 , {opacity: 0 , x: -100, delay: .8})
+    gsap.from('.subdiv2' , 1.5 , {opacity: 0 , x: -100, delay: .8})
+    </script>
+    
 </body>
 </html>
