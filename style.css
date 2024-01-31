@@ -356,6 +356,7 @@ article{
     }
 
     .btn{
+        margin-top: 10px;
         margin-bottom: 50px;
     }
 
@@ -379,6 +380,7 @@ article{
     }
 
     .subdiv2 h2{
+        margin-top: 10px;
         text-align: center;
         margin-bottom: 50px;
     }
